@@ -21,7 +21,8 @@
                 <li><a href="#about">Project</a></li>
                 <li><a href="#system">System Design</a></li>
                 <li><a href="#monitor">Live Monitor</a></li>
-                <li><a href="#literature">Literature</a></li>
+                <li><a href="#flowchart">Flow Chart</a></li>
+                <li><a href="#logic">Control Logic</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -33,12 +34,12 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Smart Distribution Feeder Monitoring & Control System</h1>
-            <p class="tagline">Real-time monitoring • Automated load control • Enhanced reliability</p>
-            <p class="description">An IoT-based solution for intelligent power distribution with automatic threshold-based load management and real-time parameter monitoring.</p>
+            <h1>Advanced Load Management System</h1>
+            <p class="tagline">Intelligent Threshold-Based Control • Priority Load Shedding • Real-time Monitoring</p>
+            <p class="description">Smart power distribution with 4-stage load shedding logic based on power consumption thresholds. Feeder 1 (High Priority: 100W) and Feeder 2 (Low Priority: 40W).</p>
             <div class="hero-buttons">
-                <a href="#monitor" class="btn btn-primary">View Live Dashboard</a>
-                <a href="#about" class="btn btn-secondary">Learn More</a>
+                <a href="#monitor" class="btn btn-primary">Live Control Panel</a>
+                <a href="#logic" class="btn btn-secondary">View Control Logic</a>
             </div>
         </div>
         <div class="hero-image">
@@ -51,121 +52,92 @@
         </div>
     </section>
 
-    <!-- Project Overview -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">Project Overview</h2>
-            <div class="project-summary">
-                <div class="summary-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Abstract</h3>
-                    <p>The proposed system monitors voltage, current, and power in a distribution feeder and performs automatic load control based on threshold values. This approach enhances reliability, reduces power loss, and minimizes manual intervention.</p>
-                </div>
-                <div class="summary-card">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <h3>Problem Statement</h3>
-                    <p>Traditional manual monitoring of electrical distribution feeders leads to delayed detection of overloads and faults, causing equipment damage, power interruptions, and reduced system reliability.</p>
-                </div>
-                <div class="summary-card">
-                    <i class="fas fa-bullseye"></i>
-                    <h3>Solution</h3>
-                    <p>Continuous real-time monitoring of electrical parameters with automated threshold-based load control to prevent overloads and ensure system reliability.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- System Design -->
     <section id="system" class="section bg-light">
         <div class="container">
-            <h2 class="section-title">System Design & Architecture</h2>
-            <div class="system-diagram">
-                <div class="diagram-container">
-                    <!-- Power Supply -->
-                    <div class="diagram-item power-supply">
-                        <i class="fas fa-plug"></i>
-                        <h4>230V AC Mains</h4>
-                        <p>Power Supply</p>
+            <h2 class="section-title">System Configuration</h2>
+            <div class="system-configuration">
+                <div class="config-card">
+                    <div class="config-header">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Feeder 1 - High Priority</h3>
                     </div>
-                    
-                    <!-- Sensors -->
-                    <div class="diagram-item sensors">
-                        <i class="fas fa-tachometer-alt"></i>
-                        <h4>Energy Sensors</h4>
-                        <p>Voltage, Current, Power</p>
-                    </div>
-                    
-                    <!-- Microcontroller -->
-                    <div class="diagram-item microcontroller">
-                        <i class="fas fa-microchip"></i>
-                        <h4>ESP32/ESP8266</h4>
-                        <p>Microcontroller Unit</p>
-                    </div>
-                    
-                    <!-- Wireless -->
-                    <div class="diagram-item wireless">
-                        <i class="fas fa-wifi"></i>
-                        <h4>Wi-Fi</h4>
-                        <p>Wireless Communication</p>
-                    </div>
-                    
-                    <!-- Dashboard -->
-                    <div class="diagram-item dashboard">
-                        <i class="fas fa-desktop"></i>
-                        <h4>Web Dashboard</h4>
-                        <p>Real-time Monitoring</p>
-                    </div>
-                    
-                    <!-- Relays -->
-                    <div class="relay-container">
-                        <div class="diagram-item relay">
-                            <i class="fas fa-toggle-on"></i>
-                            <h4>Relay 1</h4>
-                            <p>High Priority Load</p>
-                            <div class="status active" id="relay1-status">ON</div>
-                        </div>
-                        <div class="diagram-item relay">
-                            <i class="fas fa-toggle-on"></i>
-                            <h4>Relay 2</h4>
-                            <p>Low Priority Load</p>
-                            <div class="status" id="relay2-status">OFF</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Loads -->
-                    <div class="load-container">
-                        <div class="diagram-item load high-priority">
+                    <div class="config-content">
+                        <div class="load-item">
                             <i class="fas fa-fan"></i>
-                            <h4>Feeder 1</h4>
-                            <p>High Priority (100W)</p>
-                            <p class="load-status">Always ON</p>
+                            <div class="load-details">
+                                <h4>Load 1A</h4>
+                                <p class="load-power">50 Watts</p>
+                            </div>
+                            <div class="load-status active" id="config-load1a">ON</div>
                         </div>
-                        <div class="diagram-item load low-priority">
+                        <div class="load-item">
                             <i class="fas fa-lightbulb"></i>
-                            <h4>Feeder 2</h4>
-                            <p>Low Priority (20-40W)</p>
-                            <p class="load-status">Auto ON/OFF</p>
+                            <div class="load-details">
+                                <h4>Load 1B</h4>
+                                <p class="load-power">50 Watts</p>
+                            </div>
+                            <div class="load-status active" id="config-load1b">ON</div>
+                        </div>
+                        <div class="feeder-total">
+                            <span>Total:</span>
+                            <span class="total-power">100W</span>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Control Logic -->
-                <div class="control-logic">
-                    <h3><i class="fas fa-brain"></i> AI / Logic-Based Control</h3>
-                    <div class="logic-card">
-                        <div class="logic-rule">
-                            <span class="rule-icon">IF</span>
-                            <p>Total Power > 120W</p>
+
+                <div class="config-card">
+                    <div class="config-header">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Feeder 2 - Low Priority</h3>
+                    </div>
+                    <div class="config-content">
+                        <div class="load-item">
+                            <i class="fas fa-desktop"></i>
+                            <div class="load-details">
+                                <h4>Load 2A</h4>
+                                <p class="load-power">20 Watts</p>
+                            </div>
+                            <div class="load-status active" id="config-load2a">ON</div>
                         </div>
-                        <div class="logic-arrow">
-                            <i class="fas fa-arrow-right"></i>
+                        <div class="load-item">
+                            <i class="fas fa-tv"></i>
+                            <div class="load-details">
+                                <h4>Load 2B</h4>
+                                <p class="load-power">20 Watts</p>
+                            </div>
+                            <div class="load-status" id="config-load2b">OFF</div>
                         </div>
-                        <div class="logic-action">
-                            <span class="action-icon">THEN</span>
-                            <p>Turn OFF Feeder 2</p>
+                        <div class="feeder-total">
+                            <span>Total:</span>
+                            <span class="total-power">40W</span>
                         </div>
                     </div>
-                    <p class="logic-desc">High-priority loads remain active while preventing system overload</p>
+                </div>
+
+                <div class="config-card">
+                    <div class="config-header">
+                        <i class="fas fa-calculator"></i>
+                        <h3>System Summary</h3>
+                    </div>
+                    <div class="config-content">
+                        <div class="summary-item">
+                            <span>Total System Capacity:</span>
+                            <span class="value">140W</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Current Consumption:</span>
+                            <span class="value" id="current-consumption">140W</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Threshold Setting:</span>
+                            <span class="value" id="threshold-setting">120W</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Available Headroom:</span>
+                            <span class="value" id="available-headroom">0W</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -174,118 +146,257 @@
     <!-- Live Monitoring Dashboard -->
     <section id="monitor" class="section">
         <div class="container">
-            <h2 class="section-title">Live Monitoring Dashboard</h2>
+            <h2 class="section-title">Advanced Control Dashboard</h2>
             <div class="dashboard-container">
-                <!-- Real-time Parameters -->
-                <div class="dashboard-card parameters">
-                    <h3><i class="fas fa-chart-line"></i> Real-time Parameters</h3>
-                    <div class="param-grid">
-                        <div class="param-card">
-                            <div class="param-header">
-                                <i class="fas fa-bolt voltage-icon"></i>
-                                <h4>Voltage</h4>
+                <!-- Power Monitoring -->
+                <div class="dashboard-card power-monitor">
+                    <h3><i class="fas fa-chart-line"></i> Power Monitoring</h3>
+                    
+                    <div class="threshold-control">
+                        <div class="threshold-header">
+                            <h4>Threshold Control</h4>
+                            <div class="threshold-value-display">
+                                <span id="threshold-value-display">120</span>
+                                <span class="unit">W</span>
                             </div>
-                            <div class="param-value" id="voltage-value">230.5</div>
-                            <div class="param-unit">Volts</div>
-                            <div class="param-status normal">Normal</div>
                         </div>
-                        <div class="param-card">
-                            <div class="param-header">
-                                <i class="fas fa-current current-icon"></i>
-                                <h4>Current</h4>
-                            </div>
-                            <div class="param-value" id="current-value">8.2</div>
-                            <div class="param-unit">Amperes</div>
-                            <div class="param-status normal">Normal</div>
+                        <input type="range" min="50" max="140" value="120" class="slider" id="threshold-slider">
+                        <div class="slider-labels">
+                            <span>50W</span>
+                            <span>95W</span>
+                            <span>120W</span>
+                            <span>140W</span>
                         </div>
-                        <div class="param-card">
-                            <div class="param-header">
-                                <i class="fas fa-power-off power-icon"></i>
-                                <h4>Power</h4>
-                            </div>
-                            <div class="param-value" id="power-value">1884</div>
-                            <div class="param-unit">Watts</div>
-                            <div class="param-status warning">Near Threshold</div>
+                        <div class="threshold-info">
+                            <p><i class="fas fa-info-circle"></i> Adjust threshold to trigger automatic load control</p>
                         </div>
-                        <div class="param-card">
-                            <div class="param-header">
-                                <i class="fas fa-calculator pf-icon"></i>
-                                <h4>Power Factor</h4>
+                    </div>
+
+                    <div class="power-status">
+                        <div class="status-card">
+                            <div class="status-header">
+                                <i class="fas fa-bolt"></i>
+                                <h4>Current Power</h4>
                             </div>
-                            <div class="param-value" id="pf-value">0.95</div>
-                            <div class="param-unit">PF</div>
-                            <div class="param-status normal">Good</div>
+                            <div class="status-value" id="current-power">140</div>
+                            <div class="status-unit">Watts</div>
+                            <div class="status-indicator" id="power-status-indicator">
+                                <span class="indicator-dot"></span>
+                                <span class="indicator-text">Normal</span>
+                            </div>
+                        </div>
+
+                        <div class="status-card">
+                            <div class="status-header">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <h4>Threshold</h4>
+                            </div>
+                            <div class="status-value" id="threshold-power">120</div>
+                            <div class="status-unit">Watts</div>
+                            <div class="status-indicator threshold">
+                                <span class="indicator-dot"></span>
+                                <span class="indicator-text">Set Point</span>
+                            </div>
+                        </div>
+
+                        <div class="status-card">
+                            <div class="status-header">
+                                <i class="fas fa-battery-three-quarters"></i>
+                                <h4>Headroom</h4>
+                            </div>
+                            <div class="status-value" id="headroom-power">0</div>
+                            <div class="status-unit">Watts</div>
+                            <div class="status-indicator">
+                                <span class="indicator-dot"></span>
+                                <span class="indicator-text">Available</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Control Panel -->
-                <div class="dashboard-card control-panel">
-                    <h3><i class="fas fa-sliders-h"></i> Control Panel</h3>
-                    <div class="threshold-control">
-                        <h4>Power Threshold: <span id="threshold-value">120</span>W</h4>
-                        <input type="range" min="50" max="200" value="120" class="slider" id="threshold-slider">
-                        <div class="slider-labels">
-                            <span>50W</span>
-                            <span>120W</span>
-                            <span>200W</span>
-                        </div>
-                    </div>
+
+                <!-- Load Control Panel -->
+                <div class="dashboard-card load-control">
+                    <h3><i class="fas fa-sliders-h"></i> Load Control Panel</h3>
                     
-                    <div class="relay-controls">
-                        <div class="relay-control">
-                            <h4>Relay 1 (High Priority)</h4>
-                            <label class="switch">
-                                <input type="checkbox" id="relay1-switch" checked>
-                                <span class="slider-switch"></span>
-                            </label>
-                            <div class="relay-info">
-                                <p>Feeder 1: Essential Loads</p>
-                                <p class="load-rating">100W Load</p>
+                    <!-- Feeder 1 Controls -->
+                    <div class="feeder-control">
+                        <div class="feeder-header">
+                            <h4><i class="fas fa-star"></i> Feeder 1 - High Priority (100W)</h4>
+                            <div class="feeder-status">
+                                <span>Status:</span>
+                                <div class="status-badge active" id="feeder1-status">ACTIVE</div>
                             </div>
                         </div>
                         
-                        <div class="relay-control">
-                            <h4>Relay 2 (Low Priority)</h4>
-                            <label class="switch">
-                                <input type="checkbox" id="relay2-switch">
-                                <span class="slider-switch"></span>
-                            </label>
-                            <div class="relay-info">
-                                <p>Feeder 2: Non-essential Loads</p>
-                                <p class="load-rating">20-40W Load</p>
+                        <div class="load-controls">
+                            <div class="load-control-item">
+                                <div class="load-info">
+                                    <div class="load-icon">
+                                        <i class="fas fa-fan"></i>
+                                    </div>
+                                    <div class="load-details">
+                                        <h5>Load 1A</h5>
+                                        <p class="load-specs">50W • Essential</p>
+                                    </div>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="load1a-switch" checked>
+                                    <span class="slider-switch"></span>
+                                </label>
+                                <div class="load-power-display">50W</div>
+                            </div>
+
+                            <div class="load-control-item">
+                                <div class="load-info">
+                                    <div class="load-icon">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <div class="load-details">
+                                        <h5>Load 1B</h5>
+                                        <p class="load-specs">50W • Essential</p>
+                                    </div>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="load1b-switch" checked>
+                                    <span class="slider-switch"></span>
+                                </label>
+                                <div class="load-power-display">50W</div>
                             </div>
                         </div>
+
+                        <div class="feeder-control-buttons">
+                            <button class="btn-feeder" id="feeder1-on-btn">
+                                <i class="fas fa-power-off"></i>
+                                <span>Feeder 1 ON</span>
+                            </button>
+                            <button class="btn-feeder" id="feeder1-off-btn">
+                                <i class="fas fa-power-off"></i>
+                                <span>Feeder 1 OFF</span>
+                            </button>
+                        </div>
                     </div>
-                    
-                    <div class="auto-mode">
-                        <h4>Automatic Control Mode</h4>
-                        <label class="switch">
-                            <input type="checkbox" id="auto-mode-switch" checked>
-                            <span class="slider-switch"></span>
-                        </label>
-                        <p class="mode-status">System will automatically control loads based on power threshold</p>
+
+                    <!-- Feeder 2 Controls -->
+                    <div class="feeder-control">
+                        <div class="feeder-header">
+                            <h4><i class="fas fa-star-half-alt"></i> Feeder 2 - Low Priority (40W)</h4>
+                            <div class="feeder-status">
+                                <span>Status:</span>
+                                <div class="status-badge" id="feeder2-status">ACTIVE</div>
+                            </div>
+                        </div>
+                        
+                        <div class="load-controls">
+                            <div class="load-control-item">
+                                <div class="load-info">
+                                    <div class="load-icon">
+                                        <i class="fas fa-desktop"></i>
+                                    </div>
+                                    <div class="load-details">
+                                        <h5>Load 2A</h5>
+                                        <p class="load-specs">20W • Non-essential</p>
+                                    </div>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="load2a-switch" checked>
+                                    <span class="slider-switch"></span>
+                                </label>
+                                <div class="load-power-display">20W</div>
+                            </div>
+
+                            <div class="load-control-item">
+                                <div class="load-info">
+                                    <div class="load-icon">
+                                        <i class="fas fa-tv"></i>
+                                    </div>
+                                    <div class="load-details">
+                                        <h5>Load 2B</h5>
+                                        <p class="load-specs">20W • Non-essential</p>
+                                    </div>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="load2b-switch">
+                                    <span class="slider-switch"></span>
+                                </label>
+                                <div class="load-power-display">20W</div>
+                            </div>
+                        </div>
+
+                        <div class="feeder-control-buttons">
+                            <button class="btn-feeder" id="feeder2-on-btn">
+                                <i class="fas fa-power-off"></i>
+                                <span>Feeder 2 ON</span>
+                            </button>
+                            <button class="btn-feeder" id="feeder2-off-btn">
+                                <i class="fas fa-power-off"></i>
+                                <span>Feeder 2 OFF</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- System Controls -->
+                    <div class="system-controls">
+                        <div class="control-mode">
+                            <label class="switch">
+                                <input type="checkbox" id="auto-mode-switch" checked>
+                                <span class="slider-switch"></span>
+                            </label>
+                            <div class="control-info">
+                                <h5>Auto Control Mode</h5>
+                                <p>System automatically manages loads based on threshold</p>
+                            </div>
+                        </div>
+
+                        <div class="control-buttons">
+                            <button class="btn-system" id="all-on-btn">
+                                <i class="fas fa-play-circle"></i>
+                                <span>ALL ON</span>
+                            </button>
+                            <button class="btn-system" id="all-off-btn">
+                                <i class="fas fa-stop-circle"></i>
+                                <span>ALL OFF</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Power Graph -->
+
+                <!-- Power Graph & Alerts -->
                 <div class="dashboard-card power-graph">
-                    <h3><i class="fas fa-chart-area"></i> Power Consumption Trend</h3>
+                    <h3><i class="fas fa-chart-area"></i> Power Consumption</h3>
                     <div class="graph-container">
                         <canvas id="powerChart"></canvas>
                     </div>
-                    <div class="graph-stats">
-                        <div class="stat">
-                            <span class="stat-label">Max Today:</span>
-                            <span class="stat-value">1950W</span>
+                    
+                    <div class="alerts-panel">
+                        <h4><i class="fas fa-bell"></i> System Alerts</h4>
+                        <div class="alerts-list" id="alerts-list">
+                            <div class="alert normal">
+                                <i class="fas fa-info-circle"></i>
+                                <div class="alert-content">
+                                    <p>System operating normally</p>
+                                    <span class="alert-time">Just now</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <span class="stat-label">Avg Today:</span>
-                            <span class="stat-value">1450W</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-label">Threshold:</span>
-                            <span class="stat-value threshold">120W</span>
+                    </div>
+
+                    <div class="power-distribution">
+                        <h4><i class="fas fa-chart-pie"></i> Power Distribution</h4>
+                        <div class="distribution-bars">
+                            <div class="distribution-item">
+                                <span class="dist-label">Feeder 1:</span>
+                                <div class="dist-bar">
+                                    <div class="dist-fill feeder1-fill" style="width: 71%"></div>
+                                </div>
+                                <span class="dist-value" id="feeder1-dist">100W</span>
+                            </div>
+                            <div class="distribution-item">
+                                <span class="dist-label">Feeder 2:</span>
+                                <div class="dist-bar">
+                                    <div class="dist-fill feeder2-fill" style="width: 29%"></div>
+                                </div>
+                                <span class="dist-value" id="feeder2-dist">40W</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -293,99 +404,179 @@
         </div>
     </section>
 
-    <!-- Literature Review -->
-    <section id="literature" class="section bg-light">
+    <!-- Flow Chart Section -->
+    <section id="flowchart" class="section bg-light">
         <div class="container">
-            <h2 class="section-title">Literature Review & References</h2>
-            <div class="literature-table">
-                <table>
+            <h2 class="section-title">System Flow Chart</h2>
+            <div class="flowchart-container">
+                <div class="flowchart-description">
+                    <h3><i class="fas fa-project-diagram"></i> Control Algorithm</h3>
+                    <p>The system implements intelligent load shedding based on power consumption thresholds. When power exceeds the set threshold, loads are automatically turned OFF according to priority levels.</p>
+                    
+                    <div class="logic-steps">
+                        <div class="logic-step">
+                            <div class="step-icon">1</div>
+                            <div class="step-content">
+                                <h4>Continuous Monitoring</h4>
+                                <p>System continuously monitors total power consumption</p>
+                            </div>
+                        </div>
+                        
+                        <div class="logic-step">
+                            <div class="step-icon">2</div>
+                            <div class="step-content">
+                                <h4>Threshold Comparison</h4>
+                                <p>Compare current power with set threshold value</p>
+                            </div>
+                        </div>
+                        
+                        <div class="logic-step">
+                            <div class="step-icon">3</div>
+                            <div class="step-content">
+                                <h4>Load Shedding Decision</h4>
+                                <p>Based on threshold range, determine which loads to turn OFF</p>
+                            </div>
+                        </div>
+                        
+                        <div class="logic-step">
+                            <div class="step-icon">4</div>
+                            <div class="step-content">
+                                <h4>Execute Control Action</h4>
+                                <p>Turn OFF selected loads to reduce power consumption</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flowchart-image">
+                    <img src="flow-chart.jpeg" alt="System Flow Chart" class="flowchart-img">
+                    <div class="image-caption">
+                        <p><i class="fas fa-info-circle"></i> System control flow diagram showing threshold-based load management</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Control Logic Section -->
+    <section id="logic" class="section">
+        <div class="container">
+            <h2 class="section-title">Threshold Control Logic</h2>
+            
+            <div class="logic-table-container">
+                <table class="logic-table">
                     <thead>
                         <tr>
-                            <th>S. No.</th>
-                            <th>Author Name, Title, Journal Details</th>
-                            <th>Inference / Key Finding</th>
+                            <th>Threshold Range (Watts)</th>
+                            <th>Action Taken</th>
+                            <th>Loads Turned OFF</th>
+                            <th>Remaining Power</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>
-                                <strong>A. Kumar, R. Singh</strong><br>
-                                <em>"Smart Distribution Feeder Monitoring Using IoT"</em><br>
-                                IEEE Transactions on Smart Grid, Vol. 14, Issue 3, 2023
-                            </td>
-                            <td>Proposes IoT-based monitoring but lacks automated load control features</td>
+                            <td><span class="range">≥ 140</span></td>
+                            <td>Monitor Only</td>
+                            <td>None</td>
+                            <td>140W</td>
+                            <td><span class="status safe">Safe Operation</span></td>
                         </tr>
                         <tr>
-                            <td>2</td>
-                            <td>
-                                <strong>M. Patel, S. Verma</strong><br>
-                                <em>"Real-Time Monitoring and Control of Distribution Feeders"</em><br>
-                                International Journal of Electrical Power & Energy Systems, Vol. 148, 2023
-                            </td>
-                            <td>Focuses on real-time monitoring but limited in priority-based load management</td>
+                            <td><span class="range">120 - 139</span></td>
+                            <td>Turn OFF Load 2B</td>
+                            <td>Feeder 2 - Load 2B (20W)</td>
+                            <td>120W</td>
+                            <td><span class="status warning">Warning</span></td>
                         </tr>
                         <tr>
-                            <td>3</td>
-                            <td>
-                                <strong>J. Lee, K. Park</strong><br>
-                                <em>"Automatic Load Control in Smart Distribution Networks"</em><br>
-                                Energy Reports (Elsevier), Vol. 10, 2024
-                            </td>
-                            <td>Discusses automatic load control but without real-time threshold-based decision logic</td>
+                            <td><span class="range">100 - 119</span></td>
+                            <td>Turn OFF Feeder 2</td>
+                            <td>Both Feeder 2 loads (40W)</td>
+                            <td>100W</td>
+                            <td><span class="status alert">Alert</span></td>
                         </tr>
                         <tr>
-                            <td>4</td>
-                            <td>
-                                <strong>R. Chen, Y. Wang</strong><br>
-                                <em>"Advanced Monitoring Techniques for Smart Grid Distribution Systems"</em><br>
-                                IEEE Access, Vol. 12, 2024
-                            </td>
-                            <td>Presents advanced monitoring techniques but lacks integration with automated control systems</td>
+                            <td><span class="range">50 - 99</span></td>
+                            <td>Turn OFF Feeder 2 + Load 1B</td>
+                            <td>Feeder 2 (40W) + Feeder 1 - Load 1B (50W)</td>
+                            <td>50W</td>
+                            <td><span class="status critical">Critical</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="range">< 50</span></td>
+                            <td>Emergency Shutdown</td>
+                            <td>All loads except Load 1A</td>
+                            <td>50W</td>
+                            <td><span class="status emergency">Emergency</span></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+
+            <div class="logic-explanation">
+                <h3><i class="fas fa-lightbulb"></i> Logic Explanation</h3>
+                <div class="explanation-content">
+                    <p>The system follows a priority-based load shedding approach:</p>
+                    <ul>
+                        <li><strong>Load Priority Order:</strong> Load 2B → Load 2A → Load 1B → Load 1A</li>
+                        <li><strong>Feeder Priority:</strong> Feeder 2 (Low Priority) loads are turned OFF first</li>
+                        <li><strong>Threshold Ranges:</strong> System responds differently based on threshold value</li>
+                        <li><strong>Auto Recovery:</strong> When power drops below threshold, system restores loads in reverse order</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Contact & Footer -->
+    <!-- Footer -->
     <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-bolt"></i> SmartFeeder System</h3>
-                    <p>An intelligent solution for modern power distribution networks, enabling real-time monitoring and automated load control for enhanced reliability and efficiency.</p>
+                    <h3><i class="fas fa-bolt"></i> SmartFeeder Pro</h3>
+                    <p>Advanced 4-stage threshold-based load management system with intelligent priority control and real-time monitoring.</p>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Project Areas</h4>
-                    <ul>
-                        <li>Electrical Power Distribution</li>
-                        <li>Smart Grid Technology</li>
-                        <li>IoT & Embedded Systems</li>
-                        <li>Power Monitoring & Control</li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>SDG Contributions</h4>
-                    <div class="sdg-badges">
-                        <span class="sdg-badge">SDG 7</span>
-                        <span class="sdg-badge">SDG 9</span>
-                        <span class="sdg-badge">SDG 11</span>
-                        <span class="sdg-badge">SDG 12</span>
+                    <h4>System Specifications</h4>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="spec-label">Total Capacity:</span>
+                            <span class="spec-value">140 Watts</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Feeder 1 (HP):</span>
+                            <span class="spec-value">2 × 50W = 100W</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Feeder 2 (LP):</span>
+                            <span class="spec-value">2 × 20W = 40W</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Control Stages:</span>
+                            <span class="spec-value">4 Threshold Ranges</span>
+                        </div>
                     </div>
-                    <p>Affordable Clean Energy, Industry Innovation, Sustainable Cities, Responsible Consumption</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Control Logic</h4>
+                    <div class="logic-summary">
+                        <p><i class="fas fa-check-circle"></i> 5 Threshold ranges with specific actions</p>
+                        <p><i class="fas fa-check-circle"></i> Priority-based load shedding</p>
+                        <p><i class="fas fa-check-circle"></i> Automatic load restoration</p>
+                        <p><i class="fas fa-check-circle"></i> Manual override capability</p>
+                    </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Smart Distribution Feeder Monitoring System. Academic Project.</p>
+                <p>&copy; 2024 Advanced Smart Feeder Monitoring System • 4-Stage Threshold Control</p>
                 <div class="footer-links">
-                    <a href="#"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="#"><i class="fas fa-file-pdf"></i> Documentation</a>
-                    <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+                    <a href="#monitor"><i class="fas fa-tachometer-alt"></i> Live Dashboard</a>
+                    <a href="#logic"><i class="fas fa-brain"></i> Control Logic</a>
+                    <a href="#flowchart"><i class="fas fa-project-diagram"></i> Flow Chart</a>
                 </div>
             </div>
         </div>
